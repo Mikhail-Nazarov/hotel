@@ -1,0 +1,21 @@
+@import "../../../scss/App.scss";
+
+.admin-table {
+  display: grid;
+  th {
+    color: $primary-color-light;
+    background-color: $primary-color-hover;
+  }
+  .current-row {
+    background-color: aquamarine;
+  }
+}
+.rows-count-control {
+  width: min-content;
+  margin: auto;
+  @extend %center-block;
+  button {
+    width: 50px;
+    font-size: 2em;
+  }
+}

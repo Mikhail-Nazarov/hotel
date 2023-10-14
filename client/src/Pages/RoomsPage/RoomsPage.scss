@@ -1,0 +1,28 @@
+@import "../../scss/App.scss";
+
+.rooms-page {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  padding-top: 150px;
+}
+
+.pag-buttons {
+  @extend %center-block;
+  width: fit-content;
+  margin: 0 auto 30px auto;
+  gap: 10px;
+  button {
+    @extend %button;
+    height: 40px;
+    width: 40px;
+    background: $primary-color;
+    @extend %light-text;
+    font: $strict-font;
+    &:hover {
+      background-color: $primary-color-hover;
+    }
+  }
+  button.active {
+    background: $primary-color-hover;
+  }
+}

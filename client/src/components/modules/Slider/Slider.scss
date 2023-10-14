@@ -1,0 +1,61 @@
+@import "../../../scss/App.scss";
+
+.slider {
+  @extend %center-block;
+  align-items: center;
+
+  .slider-button {
+    @extend %button;
+    height: 50px;
+    background: url("right arrow.png");
+    width: 50px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .left {
+    transform: scaleX(-1);
+  }
+  .slider-body {
+    min-width: 500px;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+.slide-right-enter {
+  transform: translateX(100%) scale(0.6);
+}
+
+.slide-right-enter-active {
+  transform: translateX(0%) scale(1);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+.slide-right-exit-active {
+  transform: translateX(-100%) scale(0.6);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-left-enter {
+  transform: translateX(-100%) scale(0.6);
+}
+
+.slide-left-enter-active {
+  transform: translateX(0%) scale(1);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+.slide-left-exit-active {
+  transform: translateX(100%) scale(0.6);
+  transition: transform 400ms ease-in-out;
+}

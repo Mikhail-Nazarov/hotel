@@ -1,0 +1,115 @@
+@import "../../scss/App.scss";
+
+.full-width {
+  * {
+    width: 100%;
+  }
+}
+
+// .slider {
+//   @extend %center-block;
+//   align-items: center;
+
+//   .slider-button {
+//     @extend %button;
+//     height: 50px;
+//     background: url("right arrow.png");
+//     width: 50px;
+//     background-position: center;
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//   }
+//   .left {
+//     transform: scaleX(-1);
+//   }
+//   .slider-body {
+//     min-width: 500px;
+//     min-height: 250px;
+//     position: relative;
+//     overflow: hidden;
+//   }
+// }
+
+.slide-right-enter {
+  transform: translateX(100%) scale(0.6);
+}
+
+.slide-right-enter-active {
+  transform: translateX(0%) scale(1);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-right-exit {
+  transform: translateX(0%);
+}
+
+.slide-right-exit-active {
+  transform: translateX(-100%) scale(0.6);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-left-enter {
+  transform: translateX(-100%) scale(0.6);
+}
+
+.slide-left-enter-active {
+  transform: translateX(0%) scale(1);
+  transition: transform 400ms ease-in-out;
+}
+
+.slide-left-exit {
+  transform: translateX(0%);
+}
+
+.slide-left-exit-active {
+  transform: translateX(100%) scale(0.6);
+  transition: transform 400ms ease-in-out;
+}
+
+.dropZone {
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 15px;
+  display: grid;
+  gap: 10px;
+  max-width: 100%;
+  grid-template-columns: repeat(5, 1fr);
+  img {
+    margin: 5px;
+    width: 100%;
+  }
+}
+
+.dropZone-image {
+  position: relative;
+  width: fit-content;
+  .delete-image-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.modal {
+  height: 120vh;
+  width: 120vw;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: -10vh;
+  left: -10vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.react-datepicker__day--highlighted {
+  background-color: rgb(253, 57, 57) !important;
+  color: white !important;
+}

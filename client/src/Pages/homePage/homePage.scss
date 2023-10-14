@@ -1,0 +1,45 @@
+@import "../../scss/App.scss";
+
+.welcome-block {
+  position: absolute;
+  top: 30vh;
+  left: 25vh;
+  padding: 20px;
+  max-width: 100vh;
+  text-shadow: $text-shadow;
+
+  * {
+    margin-top: 15px;
+  }
+}
+
+.why-we {
+  margin: 20px;
+  text-align: center;
+}
+
+.whyWe-card {
+  @extend %center-block;
+  margin-top: 15px;
+  align-items: center;
+  width: 1000px;
+  height: 500px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.room-types {
+  @extend %center-block;
+  text-align: center;
+  gap: 30px;
+  margin: 15px;
+}
+
+.room-type-preview {
+  @extend %image;
+  width: 100%;
+  max-height: 300px;
+}

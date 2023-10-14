@@ -1,0 +1,16 @@
+@import "../../scss/App.scss";
+
+.admin-page {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 20% auto;
+  background-color: $primary-color;
+  padding-top: 150px;
+}
+
+.admin-navbar {
+  background-color: $primary-color-light;
+  min-height: 100vh;
+  height: 100%;
+  padding: 10px;
+}

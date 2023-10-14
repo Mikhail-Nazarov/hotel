@@ -1,0 +1,227 @@
+@import "normalize.css";
+@import "./Animation.scss";
+$primary-color: #333;
+$primary-color-hover: rgb(83, 83, 83);
+$primary-color-light: rgb(218, 218, 219);
+$addit-color1: rgb(178, 178, 189);
+$title-font: bold italic 2em "Fira Sans", serif;
+$primary-font: bold italic 1.2em "Fira Sans", serif;
+$strict-font: bold 1.2em "Fira Sans", serif;
+$transparent: rgba(0, 0, 0, 0);
+$border-default: 1px solid rgba(0, 0, 0, 0.3);
+$border-warning: 5px solid rgb(236, 59, 59);
+$border-radius-default: 15px;
+$border-radius-second: 10px;
+$text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+%center-block {
+  display: flex;
+  justify-content: center;
+}
+
+%image {
+  pointer-events: none;
+}
+img {
+  @extend %image;
+}
+
+%light-text {
+  color: $primary-color-light;
+  font: $primary-font;
+  margin: auto;
+  text-decoration: none;
+}
+%dark-text {
+  color: $primary-color;
+  font: $primary-font;
+  margin: auto;
+  text-decoration: none;
+}
+
+.full-height {
+  min-height: 100vh;
+}
+
+.app-background {
+  @extend .full-height;
+  background: $primary-color-light;
+}
+
+.light-text {
+  @extend %light-text;
+}
+.dark-text {
+  @extend %dark-text;
+}
+
+.none-bg-button {
+  border: none;
+  background: none;
+  @extend %light-text;
+  font: $strict-font;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.navBar {
+  z-index: 3;
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 60px;
+  background: $transparent;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  .navButtons {
+    display: grid;
+    column-gap: 10px;
+  }
+
+  .navlink {
+    @extend %light-text;
+    position: relative;
+    text-shadow: $text-shadow;
+    padding: 7px 10px;
+    border-radius: $border-radius-second;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(43, 42, 42, 0.3);
+    }
+  }
+
+  .navlink-active {
+    @extend .navlink;
+    &::before {
+      content: "";
+      top: 30px;
+      position: absolute;
+      border-top: 5px solid $primary-color-light;
+      width: calc(100% - 20px);
+      z-index: 222;
+    }
+  }
+
+  .homeButton {
+    @extend %light-text;
+    font: $title-font;
+  }
+
+  .localization-labels {
+    @extend %light-text;
+    font: $strict-font;
+    display: flex;
+    margin: auto;
+    gap: 30px;
+  }
+}
+
+.header-dark {
+  @extend %dark-text;
+  font: $title-font;
+  @extend %center-block;
+  margin-bottom: 15px;
+}
+
+.center-block {
+  @extend %center-block;
+}
+
+%button {
+  border-radius: $border-radius-second;
+  border: none;
+  cursor: pointer;
+}
+
+.primary-button {
+  @extend %button;
+  margin: 5px;
+  width: 100%;
+  min-height: 40px;
+  background: $primary-color;
+  @extend %light-text;
+  font: $strict-font;
+  &:hover {
+    background-color: $primary-color-hover;
+  }
+}
+.primary-button.disabled {
+  background-color: $primary-color-hover;
+}
+.primary-button.error {
+  background: red;
+}
+
+.strict-button {
+  @extend .primary-button;
+  border-radius: 0;
+  border: 3px solid $primary-color-light;
+  background: none;
+  &:hover {
+    background-color: $primary-color-light;
+    color: $primary-color;
+  }
+}
+
+.header-1 {
+  @extend %light-text;
+  font: $title-font;
+  font-size: 3em;
+}
+.header-1-dark {
+  @extend .header-1;
+  @extend %dark-text;
+}
+.header-2 {
+  @extend %light-text;
+  font: $title-font;
+  font-size: 2em;
+}
+.header-2-dark {
+  @extend .header-2;
+  @extend %dark-text;
+}
+p,
+li {
+  @extend %light-text;
+  font: $primary-font;
+}
+
+@keyframes h1-TransitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes p-TransitionIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+// h1.animated {
+//   animation: h1-TransitionIn 2s;
+// }
+// p.animated,
+// li.animated {
+//   animation: p-TransitionIn 2s;
+// }
+
+// .animated-block-1 {
+//   margin: 0;
+//   animation: h1-TransitionIn 1s;
+// }
+// .animated-block-2 {
+//   margin: 0;
+//   animation: p-TransitionIn 1s;
+// }

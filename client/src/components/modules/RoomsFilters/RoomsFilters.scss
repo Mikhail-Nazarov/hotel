@@ -1,0 +1,11 @@
+@import "../../../scss/App.scss";
+
+.filters-wrapper {
+  background-color: $primary-color-light;
+  height: fit-content;
+  padding: 15px;
+  width: 100%;
+  margin-bottom: 50px;
+  border: $border-default;
+  border-radius: $border-radius-default;
+}
